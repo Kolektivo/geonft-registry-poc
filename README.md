@@ -1,6 +1,28 @@
 # GeoNFT and Spatial Data Registry Proof-of-Concept
+## Overview
 
-Monorepo with two packages:
+The Kolektivo GeoNFT Registry module will power the minting, deploy, contract interactions and listing of the GeoNFT (Geospatial Non-fungible Token). GeoNFTs are ERC-1155 tokens that corresponds topological data of real world areas.
+
+GeoNFT are at the heart of Kolektivo’s approach to ecological assets aiming to provide a faithful digital twin of the underlying physical reality. A GeoNFT consists of topological data defined with points, polygonal chains and areas. It includes a centralized or decentralized identifier (CID/DID) pointing to a datastore of the ecological state data for its constituent territory.
+
+GeoNFT borders can be computationally defined — e.g., the boundary of an area of a certain level of forestation — or manually determined through the local governance of a geographic expert.
+
+Following from the GeoNFT are ecological tokens: fungible ERC20 tokens split from the GeoNFT through a process known as *fractionalization* — the act of dividing a NFT into multiple fractions, or shards. These ecological tokens can be both:
+
+- **Collateral** in local reserves, such as the Kolektivo Curaçao Reserve for community currency production, or global reserves, such as the Celo Reserve ****for Celo stablecoin production.
+- **Treasury assets**, materially backing the wealth of the Kolektivo Network and KTT to seed new community economies all around the world.
+
+Beyond their role as collateral and treasury assets, though, there are four means of monetizing and binding ecological assets to our underlying material reality: as **datatokens, outputs-rights tokens, insurance tokens, and ownership tokens**.
+
+To learn more about GeoNFT please refer to:
+
+- The **Kolektivo Framework Bluepaper**, available [here](https://assets.website-files.com/5fcaa3a6fcb269f7778d1f87/6319a99a8861af08a497e3a9_Kolektivo%20Bluepaper.pdf).
+- The **Kolektivo Framework Whitepaper**, available [here](https://github.com/Curve-Labs/Kolektivo/blob/main/The%20Kolektivo%20Framework%20Whitepaper%20v.3.pdf).
+
+This repository is organized as a [monorepo](https://monorepo.tools/), a single repository containing multiple distinct code bases, with well-defined relationships.
+## Monorepo Architecture
+
+This monorepo has two main packages whose function can be summarized as follows:
 
 - hardhat-ts: a hardhat typescript project
   - runs and deploys the NFT contracts to a local node
@@ -11,10 +33,6 @@ Monorepo with two packages:
   - IPFS for metadata
   - adds a Ceramic document
 
-## TODO
-
-- dapp
-  - Add wallet mock to expand testing in Jest
 
 ## Requirements
 
@@ -32,9 +50,9 @@ yarn install
 
 Create an Infura Account and an Infura project with IPFS Service, copy `packages/dapp/.env.sample` to `packages/dapp/.env` and fill in the following fields:
 
-REACT_APP_PROJECT_ID=
+VITE_PROJECT_ID=
 
-REACT_APP_PROJECT_SECRET=
+VITE_PROJECT_SECRET=
 
 ### Setup Metamask
 
